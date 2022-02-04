@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Day02">
         <activity
+            android:name=".MainActivity_Lab_Receive"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Lab_dice"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivityEmailRecivie"
             android:exported="false" />
         <activity

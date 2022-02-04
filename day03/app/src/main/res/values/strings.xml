@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">day03</string>
+    <string name="sendButton">Send More Data</string>
+    <string name="hello" translatable="false"> Hello %s </string>
+</resources>
