@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">day02</string>
+    <string name="Roll">ਰੋਲ</string>
+    <string name="History">ਇਤਿਹਾਸ ਦਿਖਾਓ</string>
+    <string name="Reset">ਰੀਸੈਟ ਕਰੋ</string>
+</resources>

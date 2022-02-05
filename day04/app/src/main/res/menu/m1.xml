@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/menu_m1"
+        android:title="Help"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:showAsAction="ifRoom"
+        >
+        <menu>
+            <item
+                android:id="@+id/menum1_first"
+                android:title="First"
+                />
+
+            <item
+                android:title="Second"
+                android:id="@+id/menum1_second"
+                />
+
+        </menu>
+
+
+    </item>
+
+
+    <item
+        android:id="@+id/menu_m2"
+        android:title="B"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/menu_m3"
+        android:title="C"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:showAsAction="withText"
+        android:orderInCategory="200"
+        />
+
+    <item
+        android:id="@+id/menu_m4"
+        android:title="D"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:showAsAction="withText"
+        />
+
+
+
+
+</menu>
