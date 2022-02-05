@@ -15,4 +15,4 @@ Demo of Dice Roll Application-https://github.com/Anuj16091996/Andrioid/issues/3#
 
 Login and Register Application-
 Source Code-https://github.com/Anuj16091996/Andrioid/blob/master/MainActivity_Send_Data_Back_and_Forth/app/src/main/java/com/example/mainactivity_send_data_back_and_forth/MainActivity.kt
-Demo os Login application-
+Demo os Login application-https://github.com/Anuj16091996/Andrioid/issues/4#issue-1124976663
