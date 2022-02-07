@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="positiveButton">Ok</string>
+    <string name="negativeButton">No</string>
+    <string name="neutralButton">Cancel</string>
+    <string name="setMessage">My message</string>
+    <string name="setDialog">My Dialog</string>
+    <array name="arraylist">
+        <item>Apple</item>
+        <item>Bannaa</item>
+        <item>Water Melon</item>
+        <item>Orange</item>
+    </array>
+</resources>
