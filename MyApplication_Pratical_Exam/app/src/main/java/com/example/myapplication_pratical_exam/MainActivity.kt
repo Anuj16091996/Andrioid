@@ -37,8 +37,6 @@ class MainActivity : AppCompatActivity() {
                                 intent.getStringArrayListExtra(MainActivity_Toast.APPEND_DATA) as ArrayList<Int>
                             if (tempData != null) {
                                 toastList.addAll(tempData)
-                                Log.e("anuj", toastList.sum().toString())
-                                Log.e("anuj", tempData.toString())
                                 displayToast.setText(toastList.sum().toString())
                             }
 
@@ -49,8 +47,6 @@ class MainActivity : AppCompatActivity() {
                                 intent.getStringArrayListExtra(MainActivity_Snack.APPEND_DATA_SNACK) as ArrayList<Int>
                             if (tempData != null) {
                                 snakcList.addAll(tempData)
-                                Log.e("anuj", snakcList.sum().toString())
-                                Log.e("anuj", tempData.toString())
                                 displaySnack.setText(snakcList.sum().toString())
                             }
 
