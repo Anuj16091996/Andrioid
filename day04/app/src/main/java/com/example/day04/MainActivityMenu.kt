@@ -7,6 +7,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 
 class MainActivityMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

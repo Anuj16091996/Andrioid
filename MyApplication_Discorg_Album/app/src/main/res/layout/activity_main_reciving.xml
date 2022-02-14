@@ -16,26 +16,61 @@
         android:id="@+id/receiveMain_image"
         />
 
-    <TextView
-       android:layout_marginLeft="20dp"
-        android:gravity="left|center"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:id="@+id/receiveMain_title"
-        android:text="your Text Here"
-        android:textStyle="bold"
-        />
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:id="@+id/receiveMain_label"
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Album Title -: "
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/receiveMain_title"
+            android:text="your Text Here"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="129dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="left|center"
-        android:text="your Text Here"
-        android:textStyle="bold" />
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Album Label -: "
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/receiveMain_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="your Text Here"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
 
     <Button
         android:layout_width="match_parent"

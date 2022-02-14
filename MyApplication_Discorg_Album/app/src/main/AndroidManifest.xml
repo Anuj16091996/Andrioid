@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication_Discorg_Album">
         <activity
+            android:name=".DatabaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivityRecivingActivity"
             android:exported="false" />
         <activity

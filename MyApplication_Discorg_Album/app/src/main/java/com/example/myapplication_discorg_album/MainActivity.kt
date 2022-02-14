@@ -1,9 +1,8 @@
 package com.example.myapplication_discorg_album
 
-import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -11,17 +10,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication_discorg_album.Network.DiscorgsAPI
-import com.example.myapplication_discorg_album.entities.Album
 import com.example.myapplication_discorg_album.entities.ResultOfDiscords
 import com.example.myapplication_discorg_album.recycleView.DiscorgsAdapter
 import retrofit2.Call
 import retrofit2.Response
+
 
 class MainActivity : AppCompatActivity(), retrofit2.Callback<ResultOfDiscords> {
     private val discorgsAdapter = DiscorgsAdapter()
 
     private lateinit var searchText: EditText
     private lateinit var searchButton: Button
+    private lateinit var favoriteButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -33,7 +33,12 @@ class MainActivity : AppCompatActivity(), retrofit2.Callback<ResultOfDiscords> {
         searchButton = findViewById(R.id.main_searchButton)
         searchButton.setOnClickListener(this::onClickButton)
         recyclerView.setHasFixedSize(true)
+        favoriteButton = findViewById(R.id.main_favorite)
+        favoriteButton.setOnClickListener(this::sendDataToDataBaseAdapter)
+
+
     }
+
 
     fun onClickButton(view: View) {
 
@@ -48,6 +53,11 @@ class MainActivity : AppCompatActivity(), retrofit2.Callback<ResultOfDiscords> {
 
             Toast.makeText(this, "Insert Some Data ", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun sendDataToDataBaseAdapter(view: View) {
+        val intent = Intent(this, DatabaseActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onResponse(call: Call<ResultOfDiscords>, response: Response<ResultOfDiscords>) {
