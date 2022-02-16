@@ -18,7 +18,6 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), retrofit2.Callback<ResultOfDiscords> {
     private val discorgsAdapter = DiscorgsAdapter()
-
     private lateinit var searchText: EditText
     private lateinit var searchButton: Button
     private lateinit var favoriteButton: Button
