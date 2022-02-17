@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application_Convercy_Converter">
         <activity
+            android:name=".MainActivityFavroite"
+            android:exported="false" />
+        <activity
             android:name=".recycleView.Reciving_Currency_Activity"
             android:exported="false" />
         <activity

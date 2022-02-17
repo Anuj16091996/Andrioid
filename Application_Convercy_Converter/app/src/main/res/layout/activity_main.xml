@@ -65,6 +65,7 @@
                             android:layout_margin="10dp"
                             android:background="@drawable/edittextbackground"
                             android:hint="$ Enter Your Amount"
+                            android:inputType="numberDecimal"
                             android:textSize="12dp"
                             android:textStyle="italic" />
 
@@ -224,5 +225,11 @@
         android:layout_height="250dp"
         android:layout_weight="1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/main_Favorites"
+        android:layout_height="wrap_content"
+        android:text="Favorites" />
 
 </LinearLayout>
