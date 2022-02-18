@@ -21,3 +21,8 @@ Demo os Login application-https://github.com/Anuj16091996/Andrioid/issues/4#issu
 Discog Api application-: 
 Souce Code-https://github.com/Anuj16091996/Andrioid/tree/master/MyApplication_Discorg_Album/app/src/main/java/com/example/myapplication_discorg_album
 Demo-https://github.com/Anuj16091996/Andrioid/issues/5#issue-1134289468
+
+
+Currency Converter Application -:
+Source Code-: https://github.com/Anuj16091996/Andrioid/blob/master/Application_Convercy_Converter/app/src/main/java/com/example/application_convercy_converter/MainActivity.kt
+Demo -:https://github.com/Anuj16091996/Andrioid/issues/6#issue-1142328371
