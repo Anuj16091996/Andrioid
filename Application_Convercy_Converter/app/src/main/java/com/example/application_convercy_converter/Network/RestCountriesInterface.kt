@@ -14,10 +14,7 @@ private val retrofit =
 interface RestCountriesInterface {
     @GET("v2/all/")
     fun getSearchResults(
-//        @Query("key") key: String,
-//        @Query("secret") secret: String,
-//        @Query("artist") search: String,
-//        @Query("country") country: String
+
     ): Call <ArrayList<ResultOfRestCountries>>
 }
 

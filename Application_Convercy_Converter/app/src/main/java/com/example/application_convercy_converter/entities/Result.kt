@@ -5,8 +5,8 @@ import kotlin.collections.ArrayList
 
 data class  ResultOfRestCountries(
     @SerializedName("name") val countryName: String,
-    @SerializedName("flags") val flags:CountryDeatilsFromAPI,
-    @SerializedName("currencies") val currencies:ArrayList<CountryDeatilsFromAPI>,
+    @SerializedName("flags") val flags:CountryDetailsFromAPI,
+    @SerializedName("currencies") val currencies:ArrayList<CountryDetailsFromAPI>,
     )
 
 {

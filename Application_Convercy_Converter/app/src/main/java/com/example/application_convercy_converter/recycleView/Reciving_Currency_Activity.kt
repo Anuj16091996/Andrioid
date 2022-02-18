@@ -2,7 +2,6 @@ package com.example.application_convercy_converter.recycleView
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -34,6 +33,11 @@ class Reciving_Currency_Activity : AppCompatActivity(), retrofit2.Callback<Amera
     private lateinit var dataBase: AppDatabase
     var convertAmount: Double? = null
     var bookCurrencyBoolean = true
+    var bookDataBoolean = true
+    private var detailsFromDatabase = CurrencyBook(
+        null, null, null, null, null,
+        null, null, null
+    )
     private var fromUserChoice = CountryDetails(null, null, null, null)
     private var toUserChoice = CountryDetails(null, null, null, null)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,15 +63,29 @@ class Reciving_Currency_Activity : AppCompatActivity(), retrofit2.Callback<Amera
             toUserChoice =
                 intent.getSerializableExtra(MainActivity.TO_USER_CHOICE) as CountryDetails
             userAmount = intent.getStringExtra(MainActivity.USER_Amount)
+            userAmountDouble = userAmount?.toDouble()
+            val getApi = ConvertAPI.RETROFIT_SERVICE.getSearchResults(
+                fromUserChoice.currencyCode.toString(),
+                toUserChoice.currencyCode.toString(), userAmountDouble
+            )
+            getApi.enqueue(this)
         }
-        userAmountDouble = userAmount?.toDouble()
-        val getApi = ConvertAPI.RETROFIT_SERVICE.getSearchResults(
-            fromUserChoice.currencyCode.toString(),
-            toUserChoice.currencyCode.toString(), userAmountDouble
-        )
-        getApi.enqueue(this)
 
-
+        if (intent.hasExtra(FavoriteAdapter.FavoriteViewHolder.EXTRA_INTENT_FAVROITE)) {
+            detailsFromDatabase =
+                intent.getSerializableExtra(FavoriteAdapter.FavoriteViewHolder.EXTRA_INTENT_FAVROITE) as CurrencyBook
+            Picasso.get().load(detailsFromDatabase.FromImage).into(fromImage)
+            Picasso.get().load(detailsFromDatabase.ToImage).into(toImage)
+            fromAmount.setText(detailsFromDatabase.FromAmount.toString())
+            fromCountryName.setText(detailsFromDatabase.FromCountry)
+            fromCurrencyName.setText(detailsFromDatabase.FromCurrency)
+            toCountryName.setText(detailsFromDatabase.ToCountry)
+            toCurrencyName.setText(detailsFromDatabase.ToCurrency)
+            toAmount.setText(detailsFromDatabase.ToAmount.toString())
+            bookCurrencyBoolean = false
+            bookDataBoolean = false
+            bookCurrency.setText("Remove")
+        }
     }
 
     private fun BookCurrency(view: View) {
@@ -94,13 +112,26 @@ class Reciving_Currency_Activity : AppCompatActivity(), retrofit2.Callback<Amera
             bookCurrencyBoolean = false
         } else {
 
-            AppDatabase.databaseWriteExecutor.execute {
-                val id =
-                    dataBase.CurrencyDAO().delete(fromUserChoice.countryImage, userAmountDouble)
+            if (!bookDataBoolean) {
+
+                AppDatabase.databaseWriteExecutor.execute {
+                    dataBase.CurrencyDAO()
+                        .delete(detailsFromDatabase.FromImage, detailsFromDatabase.FromAmount)
+                }
+                Toast.makeText(this, "Currency Removed", Toast.LENGTH_SHORT).show()
+                bookCurrencyBoolean = true
+                bookCurrency.setText("Add")
+            } else {
+                AppDatabase.databaseWriteExecutor.execute {
+                    val id =
+                        dataBase.CurrencyDAO().delete(fromUserChoice.countryImage, userAmountDouble)
+                }
+                Toast.makeText(this, "Currency Removed", Toast.LENGTH_SHORT).show()
+                bookCurrencyBoolean = true
+                bookCurrency.setText("Add")
             }
-            Toast.makeText(this, "Currency Removed", Toast.LENGTH_SHORT).show()
-            bookCurrencyBoolean = true
-            bookCurrency.setText("Add")
+
+
         }
 
     }

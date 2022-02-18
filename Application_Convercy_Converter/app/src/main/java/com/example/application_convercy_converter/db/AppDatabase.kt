@@ -9,7 +9,7 @@ import com.reza.roomapplication.db.entities.CurrencyBook
 import java.util.concurrent.Executors
 
 //TODO: Add Entities and change version if you modified the database
-@Database(entities = [CurrencyBook::class], version = 15)
+@Database(entities = [CurrencyBook::class], version = 17)
 abstract class AppDatabase : RoomDatabase() {
 
     //TODO: Add DAOs here

@@ -1,13 +1,11 @@
 package com.example.application_convercy_converter.Network
 
 import com.example.application_convercy_converter.entities.AmeraDonConversion
-import com.example.application_convercy_converter.entities.ResultofUSDollar
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 private const val BASE_URL = "https://v6.exchangerate-api.com/v6/28aef8e2e94745c1f2720fbf/pair/"
 private val retrofit =

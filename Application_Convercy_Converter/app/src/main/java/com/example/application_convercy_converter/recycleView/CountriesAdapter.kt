@@ -20,7 +20,7 @@ class CountriesAdapter() : RecyclerView.Adapter<CountriesAdapter.CountriesViewHo
 
 
         var position: CountryDetails? = null
-        val click: CardView = containerView.findViewById(R.id.item_click)
+        private val click: CardView = containerView.findViewById(R.id.item_click)
         val currencyCode: TextView = containerView.findViewById(R.id.itemList_CurrencyCode)
         val currencyValue: TextView = containerView.findViewById(R.id.itemList_CurrencyValue)
 
@@ -44,15 +44,6 @@ class CountriesAdapter() : RecyclerView.Adapter<CountriesAdapter.CountriesViewHo
         holder.currencyCode.setText(currentData.currencyName)
         holder.currencyValue.setText(currentData.currencyCode)
         holder.position = dataset[position]
-
-
-//        if (currentData.countryImage != null) {
-//            holder.imageView.setImageResource(R.drawable.data)
-//        } else {
-//            Picasso.get()
-//                .load(currentData.countryImage)
-//                .into(holder.imageView)
-//        }
 
     }
 
