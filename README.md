@@ -26,3 +26,7 @@ Demo-https://github.com/Anuj16091996/Andrioid/issues/5#issue-1134289468
 Currency Converter Application -:
 Source Code-: https://github.com/Anuj16091996/Andrioid/blob/master/Application_Convercy_Converter/app/src/main/java/com/example/application_convercy_converter/MainActivity.kt
 Demo -:https://github.com/Anuj16091996/Andrioid/issues/6#issue-1142328371
+
+Sushi Order Application-:
+Source Code-: https://github.com/Anuj16091996/Andrioid/blob/master/Final_Pratical_Exam/app/src/main/java/com/example/final_pratical_exam/MainActivity.kt
+Demo-: https://github.com/Anuj16091996/Andrioid/issues/7#issue-1144781765
