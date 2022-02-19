@@ -13,6 +13,7 @@ class Menu_Activity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var dataBase: AppDatabase
     private lateinit var checkoutButton: Button
+    private var dataBoolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
@@ -32,5 +33,18 @@ class Menu_Activity : AppCompatActivity() {
     private fun checkOutItems(view: View) {
         val intent = Intent(this, CheckoutActivity::class.java)
         startActivity(intent)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        dataBoolean = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!dataBoolean) {
+            finish();
+            startActivity(getIntent());
+        }
     }
 }

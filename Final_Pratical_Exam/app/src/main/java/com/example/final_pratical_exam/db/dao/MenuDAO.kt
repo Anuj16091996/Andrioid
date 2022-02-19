@@ -10,6 +10,9 @@ interface MenuDAO {
     @Query("SELECT * FROM MenuDatabase")
     fun getAllMenu(): MutableList<MenuDatabase>
 
+    @Query("SELECT * FROM MenuDatabase where Quantity >=1")
+    fun getAllMenuFromQuantity(): MutableList<MenuDatabase>
+
     @Query("SELECT * FROM MenuDatabase where id like :ID")
     fun getUserLive(ID: Int): MenuDatabase
 
@@ -26,7 +29,9 @@ interface MenuDAO {
     fun delete(currencyBook: String?, fromAmount: Double?)
 
     @Query("UPDATE MenuDatabase SET Quantity =:quantity WHERE id=:menuid;")
-    fun update(quantity: Int?, menuid :Int)
+    fun update(quantity: Int?, menuid: Int)
 
+    @Query("Update MenuDatabase set Quantity=0 where id=:id")
+    fun UpdateToQuantity(id: Int)
 
 }

@@ -1,6 +1,7 @@
 package com.example.final_pratical_exam.recycleView
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,6 +41,8 @@ class CheckoutAdapter() : RecyclerView.Adapter<CheckoutAdapter.CheckoutViewHolde
         holder.quantityHolder.setText(currentData.Quantity.toString())
         holder.position = dataset[position]
         currentData.MenuImage?.let { holder.MenuImage.setImageResource(it) }
+        val price = (currentData.Quantity)?.times(currentData.Price!!)?.toDouble()
+        holder.finalPrice.setText(price.toString())
     }
 
     fun InsertAllData(data: MutableList<MenuDatabase>) {
@@ -52,6 +55,6 @@ class CheckoutAdapter() : RecyclerView.Adapter<CheckoutAdapter.CheckoutViewHolde
 
     override fun getItemViewType(position: Int): Int {
 
-        return R.layout.custom_menu
+        return R.layout.checkout_menu
     }
 }

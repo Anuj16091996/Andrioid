@@ -9,7 +9,7 @@ import com.reza.roomapplication.db.entities.MenuDatabase
 import java.util.concurrent.Executors
 
 //TODO: Add Entities and change version if you modified the database
-@Database(entities = [MenuDatabase::class], version = 9)
+@Database(entities = [MenuDatabase::class], version = 13)
 abstract class AppDatabase : RoomDatabase() {
 
     //TODO: Add DAOs here
