@@ -1,6 +1,8 @@
 # Andrioid
 Andrioid Application in kotlin language
 
+Hello all, i am learning andrioid, and have devlop all the application which are mention below using various Libraries such as retrofit, livedata etc and all, on demo of application you can find the GIF of how a application is working.
+
 
 Calculator application-https://github.com/Anuj16091996/Andrioid/blob/master/day02/app/src/main/res/layout/activity_main_calculator.xml
 Demo of calculator-https://github.com/Anuj16091996/Andrioid/issues/1#issue-1121188377
